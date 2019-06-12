@@ -1,0 +1,490 @@
+html {
+   font-size: 62.5%;
+   --primary-color: #b542b5;
+   --primary-color-dark: #8239c0;
+   --link-color: #6c36c5;
+   --secondary-color: #090fb2;
+   --title-shadow: #f7f5fb;
+   --text-color: #4e4e4e;
+   --white: #fff;
+   --shadows: rgba(0, 0, 0, 0.4);
+   box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+   padding: 0;
+   margin: 0;
+   box-sizing: inherit;
+}
+
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background: linear-gradient(
+         45deg,
+         var(--primary-color),
+         var(--secondary-color)
+      )
+      no-repeat;
+   min-height: 100vh;
+}
+
+.container {
+   max-width: 90vw;
+   background: var(--white);
+   border-radius: 3px;
+   box-shadow: 0 3rem 6rem var(--shadows);
+   margin: 7.5rem auto;
+   overflow: hidden;
+
+   @media only screen and (max-width: 768px) {
+      margin: 3.5rem auto;
+   }
+
+   @media only screen and (max-width: 500px) {
+      margin: 0;
+      max-width: 100vw;
+   }
+}
+
+// HEADER
+
+.header {
+   background: url('./img/Trazado\ 1.svg') var(--white) no-repeat;
+   background-size: initial;
+   background-position: bottom;
+   background-position-x: -2rem;
+   height: calc(100vh - 5.5rem);
+   position: relative;
+
+   @media only screen and (max-width: 1600px) {
+      background-size: 50%;
+   }
+
+   @media only screen and (max-width: 500px) {
+      height: calc(100vh - 10vh);
+   }
+
+   @media only screen and (max-width: 500px) {
+      background-size: 100%;
+   }
+}
+
+.nav {
+   display: flex;
+   align-items: center;
+   padding: 2.5rem 10rem;
+   box-shadow: 0 0.1rem 1rem var(--shadows);
+   @media only screen and (max-width: 1200px) {
+      padding: 1.5rem 10rem;
+   }
+
+   @media only screen and (max-width: 768px) {
+      flex-direction: column;
+   }
+   @media only screen and (max-width: 600px) {
+      box-shadow: none;
+      border-bottom: 1px solid var(--shadows);
+   }
+
+   &__logo {
+      flex: 1 0 40%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      @media only screen and (max-width: 768px) {
+         flex: 1 0 100%;
+      }
+
+      .title-h2 {
+         color: var(--primary-color-dark);
+         font-size: 2.2rem;
+         font-weight: normal;
+      }
+
+      .logo {
+         border-radius: 60%;
+         background: var(--primary-color-dark);
+         color: var(--white);
+         margin-left: 2.5rem;
+         width: 5rem;
+         height: 5rem;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font-weight: normal;
+      }
+   }
+
+   &__navigation {
+      flex: 1 0 50%;
+      @media only screen and (max-width: 768px) {
+         margin: 1rem auto 0;
+         flex: 1 0 100%;
+      }
+      @media only screen and (max-width: 600px) {
+         width: 100%;
+      }
+   }
+
+   &__list {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      @media only screen and (max-width: 500px) {
+         justify-content: center;
+      }
+   }
+
+   &__item {
+      margin: 0 2rem;
+   }
+
+   &__link {
+      color: var(--text-color);
+      font-size: 1.6rem;
+      text-decoration: none;
+
+      &:hover {
+         color: var(--primary-color-dark);
+      }
+   }
+
+   &__main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      @media only screen and (max-width: 1200px) {
+         height: 80%;
+      }
+
+      &__title {
+         margin-top: -20%;
+         text-align: center;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         position: relative;
+
+         @media only screen and (max-width: 768px) {
+            margin-top: -30%;
+         }
+
+         @media only screen and (max-width: 600px) {
+            margin-top: -50%;
+         }
+         @media only screen and (max-width: 500px) {
+            margin-top: -80%;
+         }
+
+         h1 {
+            color: var(--link-color);
+            font-size: 5rem;
+            max-width: calc(100% / 1.5);
+            background: var(--title-shadow);
+            border-radius: 10rem;
+            font-weight: normal;
+            padding: 2.5rem;
+
+            @media only screen and (max-width: 1600px) {
+               font-size: 4rem;
+            }
+
+            @media only screen and (max-width: 1200px) {
+               font-size: 3.5rem;
+            }
+
+            @media only screen and (max-width: 600px) {
+               font-size: 2.5rem;
+            }
+
+            @media only screen and (max-width: 500px) {
+               font-size: 2rem;
+            }
+
+            @media only screen and (max-width: 500px) {
+               max-width: 80vw;
+            }
+         }
+      }
+
+      &__link {
+         font-size: 1.6rem;
+         color: var(--white);
+         text-decoration: none;
+         background: var(--link-color);
+         margin-top: 2.5rem;
+         padding: 1rem 2rem;
+         border-radius: 5rem;
+         transition: background 0.3s;
+         &:hover {
+            background: var(--primary-color-dark);
+         }
+      }
+
+      &__img {
+         position: absolute;
+         background: url('./img/paw.svg') no-repeat;
+         background-size: cover;
+         bottom: -50%;
+         right: -20%;
+         height: 35rem;
+         width: 35rem;
+
+         @media only screen and (max-width: 1600px) {
+            width: 30rem;
+            height: 30rem;
+         }
+
+         @media only screen and (max-width: 1200px) {
+            bottom: -150%;
+            right: 34%;
+            transform: rotate(30deg);
+            width: 25rem;
+            height: 25rem;
+         }
+
+         @media only screen and (max-width: 768px) {
+            bottom: -120%;
+            right: 30%;
+         }
+
+         @media only screen and (max-width: 600px) {
+            bottom: -150%;
+            right: 26%;
+         }
+
+         @media only screen and (max-width: 500px) {
+            right: 10%;
+            bottom: -180%;
+            background-size: 50%;
+         }
+         @media only screen and (max-width: 400px) {
+            right: -5%;
+         }
+      }
+   }
+}
+
+// END HEADER
+
+.products {
+   height: calc(100vh - 7.5rem);
+   background: url('./img/dog-sitting-icon-orange.png') var(--white) no-repeat;
+   background-position-x: 80%;
+   background-position-y: bottom;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   background-size: 25%;
+
+   @media only screen and (max-width: 1600px) {
+      background-size: 30%;
+   }
+
+   @media only screen and (max-width: 1200px) {
+      height: calc(75vh - 7.5rem);
+   }
+
+   @media only screen and (max-width: 600px) {
+      justify-content: center;
+   }
+
+   @media only screen and (max-width: 600px) {
+      height: calc(60vh - 7.5rem);
+   }
+
+   @media only screen and (max-width: 500px) {
+      background-size: 45%;
+      height: calc(75vh);
+   }
+
+   &__info {
+      width: 40rem;
+      margin-left: 25rem;
+      margin-top: -10rem;
+
+      @media only screen and (max-width: 1200px) {
+         margin-left: 15rem;
+      }
+
+      @media only screen and (max-width: 600px) {
+         margin-left: 0;
+         width: 30rem;
+      }
+      @media only screen and (max-width: 320px) {
+         width: 25rem;
+      }
+
+      img {
+         width: 20%;
+         display: block;
+         margin: 1.5rem auto 0;
+      }
+   }
+
+   &__title {
+      color: var(--primary-color-dark);
+      font-size: 5rem;
+      letter-spacing: 0.3rem;
+      font-weight: normal;
+
+      @media only screen and (max-width: 1200px) {
+         font-size: 4rem;
+      }
+      @media only screen and (max-width: 600px) {
+         font-size: 3rem;
+         text-align: center;
+      }
+   }
+
+   &__paragraph {
+      color: var(--primary-color-dark);
+      font-size: 3rem;
+      margin-top: 5rem;
+      @media only screen and (max-width: 1200px) {
+         font-size: 2rem;
+         margin-top: 3rem;
+      }
+      @media only screen and (max-width: 600px) {
+         font-size: 1.8rem;
+         text-align: center;
+      }
+   }
+}
+
+.about {
+   height: calc(100vh - 7.5rem);
+   background: url('./img/Trazado\ 2.svg') var(--white) no-repeat;
+   background-position: top;
+   background-position-x: 104%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   @media only screen and (max-width: 1600px) {
+      background-size: 50%;
+   }
+   @media only screen and (max-width: 1200px) {
+      height: calc(75vh - 7.5rem);
+   }
+   @media only screen and (max-width: 500px) {
+      background-size: 90%;
+      background-position-x: 125%;
+      height: calc(80vh);
+   }
+
+   &__info {
+      width: 50rem;
+      @media only screen and (max-width: 600px) {
+         width: 30rem;
+      }
+      @media only screen and (max-width: 320px) {
+         width: 25rem;
+      }
+   }
+
+   &__title {
+      color: var(--primary-color-dark);
+      font-size: 5rem;
+      letter-spacing: 0.3rem;
+      font-weight: normal;
+      text-align: center;
+      @media only screen and (max-width: 1200px) {
+         font-size: 4rem;
+      }
+      @media only screen and (max-width: 600px) {
+         font-size: 3rem;
+      }
+   }
+
+   &__paragraph {
+      color: var(--primary-color-dark);
+      font-size: 3rem;
+      margin-top: 5rem;
+      text-align: center;
+      @media only screen and (max-width: 1200px) {
+         font-size: 2rem;
+         margin-top: 3rem;
+      }
+      @media only screen and (max-width: 600px) {
+         font-size: 1.8rem;
+      }
+   }
+}
+
+.footer {
+   display: flex;
+   align-items: center;
+   border-top: 1px solid var(--shadows);
+   padding: 2.5rem 10rem;
+
+   @media only screen and (max-width: 600px) {
+      flex-direction: column;
+   }
+
+   @media only screen and (max-width: 320px) {
+      padding: 2.5rem 5rem;
+   }
+
+   &__navigation {
+      flex: 1 0 50%;
+      @media only screen and (max-width: 320px) {
+         flex: 1 0 100%;
+      }
+   }
+
+   &__list {
+      list-style: none;
+      display: flex;
+   }
+
+   &__item {
+      margin: 0 2rem;
+   }
+
+   &__link {
+      color: var(--text-color);
+      font-size: 1.6rem;
+      text-decoration: none;
+
+      &:hover {
+         color: var(--primary-color-dark);
+      }
+   }
+
+   &__copy {
+      flex: 1 0 50%;
+      display: flex;
+      justify-content: flex-end;
+
+      @media only screen and (max-width: 600px) {
+         margin-top: 1.5rem;
+      }
+
+      @media only screen and (max-width: 320px) {
+         flex: 1 0 100%;
+         justify-content: center;
+         align-items: center;
+         width: 100%;
+      }
+
+      h3 {
+         color: var(--primary-color-dark);
+         font-size: 2.3rem;
+         font-weight: normal;
+         @media only screen and (max-width: 600px) {
+            font-size: 1.6rem;
+         }
+         @media only screen and (max-width: 320px) {
+            width: 100%;
+            text-align: center;
+         }
+      }
+   }
+}
